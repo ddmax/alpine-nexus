@@ -7,7 +7,7 @@
 
 > :exclamation: Nexus 3 is still in development and might not be suitable for production **yet**.
 
-# [Sonatype Nexus 3](http://www.sonatype.org/nexus/) for Docker based on Alpine (unofficial) :whale:
+# [Sonatype Nexus 3](http://www.sonatype.org/nexus/) for Docker based on Alpine :whale:
 ----
 
 ### Run the image
