@@ -11,4 +11,4 @@ EXPOSE 8081
 
 VOLUME /opt/nexus/data
 
-CMD nexus run
+CMD nexus start
