@@ -6,7 +6,7 @@ ENV NEXUS_VERSION=2.12.1-01 \
 
 RUN apk add --no-cache curl tar openjdk8-jre && \
     mkdir -p /opt/nexus && \
-    curl -sL "https://sonatype-download.global.ssl.fastly.net/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz" | tar xz -C /opt/nexus --strip-components=1
+    curl -sfL "https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz" | tar xz -C /opt/nexus --strip-components=1
 
 EXPOSE 8081
 
