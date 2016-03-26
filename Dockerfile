@@ -12,10 +12,10 @@ RUN apk add --no-cache curl tar
 
 # Install Oracle JRE
 RUN mkdir -p /opt \
-  && curl -sfL --retry 3 \
+  && curl -sfLO \
   --header "Cookie: oraclelicense=accept-securebackup-cookie; " \
   http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/server-jre-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz \
-  | tar xz -C /opt \
+  && tar zxf server-jre-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz -C /opt \
   && ln -s /opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} ${JAVA_HOME}
 
 # Install Nexus
