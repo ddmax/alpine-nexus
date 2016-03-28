@@ -16,7 +16,7 @@ RUN apk add --no-cache curl tar \
 
 # Install Nexus
 RUN mkdir -p /opt/sonatype/nexus \
-    && mkdir -p ${SONATYPE_WORK}
+    && mkdir -p ${SONATYPE_WORK} \
     && curl -sfL "https://download.sonatype.com/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz" \
     | tar xz -C /opt/sonatype/nexus --strip-components=1
 
