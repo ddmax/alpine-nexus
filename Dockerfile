@@ -9,6 +9,7 @@ ENV JAVA_VERSION_MINOR 74
 ENV JAVA_VERSION_BUILD 02
 
 ENV NEXUS_PORT 80
+ENV RUN_AS_USER root
 
 RUN apk add --no-cache curl tar \
   openjdk8-jre
@@ -27,8 +28,7 @@ RUN mkdir -p /opt/sonatype/nexus \
     | tar xz -C /opt/sonatype/nexus --strip-components=1
 
 # Configuration
-RUN useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/false nexus \
-  && sed -i "s#8081#${NEXUS_PORT}#g" /opt/sonatype/nexus/conf/nexus.properties
+RUN sed -i "s#8081#${NEXUS_PORT}#g" /opt/sonatype/nexus/conf/nexus.properties
 
 VOLUME ${SONATYPE_WORK}
 EXPOSE ${NEXUS_PORT}
