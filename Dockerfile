@@ -34,7 +34,6 @@ VOLUME ${SONATYPE_WORK}
 EXPOSE ${NEXUS_PORT}
 
 WORKDIR /opt/sonatype/nexus/bin
-USER nexus
 #ENV CONTEXT_PATH /
 #ENV MAX_HEAP 768m
 #ENV MIN_HEAP 256m
@@ -44,8 +43,8 @@ CMD nexus start
 
 
 #CMD ${JAVA_HOME}/bin/java \
-  -Dnexus-work=${SONATYPE_WORK} -Dnexus-webapp-context-path=${CONTEXT_PATH} \
-  -Xms${MIN_HEAP} -Xmx${MAX_HEAP} \
-  -cp 'conf/:lib/*' \
-  ${JAVA_OPTS} \
-  org.sonatype.nexus.bootstrap.Launcher ${LAUNCHER_CONF}
+#  -Dnexus-work=${SONATYPE_WORK} -Dnexus-webapp-context-path=${CONTEXT_PATH} \
+#  -Xms${MIN_HEAP} -Xmx${MAX_HEAP} \
+#  -cp 'conf/:lib/*' \
+#  ${JAVA_OPTS} \
+#  org.sonatype.nexus.bootstrap.Launcher ${LAUNCHER_CONF}
